@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modalne Okno Dialogowe</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<h2>Modalne Okno Dialogowe</h2>
+
+<button id="openModal">Otwórz Okno Dialogowe</button>
+
+<div id="myModal" class="modal">
+ <div class="modal-content">
+    <span class="close">&times;</span>
+    <form id="form">
+      <label for="odp1">Ean</label><br>
+      <input type="text" id="odp1" name="odp1"><br>
+      <label for="odp2">Tytuł:</label><br>
+      <input type="text" id="odp2" name="odp2"><br>
+      <label for="odp3">Podtytuł</label><br>
+      <input type="text" id="odp3" name="odp3"><br>
+      <label for="odp4">Cena Reg</label><br>
+      <input type="text" id="odp4" name="odp4"><br>
+      <label for="odp5">Cena</label><br>
+      <input type="text" id="odp5" name="odp4"><br>
+      <input type="submit" value="Wyślij">
+    </form>
+ </div>
+</div>
+<div class="wszystko">
+  <div class="row">
+<p id="wynik2"></p>
+  </div>
+  <div class="row">
+    <div class="column">
+<img id="barcodeImage" alt="Barcoded value" src="http://bwipjs-api.metafloor.com/?bcid=code128&text=1234567890&includetext">
+    </div>
+    <div class="row">
+      <p id="wynik3"></p>
+    </div>
+    <div class="column" style="flex: 10;">
+      <p id="wynik4"></p>
+      </div>
+      <div class="column" style="flex: 90;"></div>
+      <p id="wynik5"></p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <p class="formu">Cena regularna to cena przekreślona</p>
+  </div>
+</div>
+
+</div>
+<script>
+// Funkcja do otwarcia modalnego okna dialogowego
+// Funkcja do otwarcia modalnego okna dialogowego
+function openModal() {
+ document.getElementById("myModal").style.display = "block";
+}
+
+// Funkcja do zamknięcia modalnego okna dialogowego
+function closeModal() {
+ document.getElementById("myModal").style.display = "none";
+}
+
+// Dodanie zdarzenia kliknięcia do przycisku otwierającego modal
+document.getElementById("openModal").addEventListener("click", openModal);
+
+// Dodanie zdarzenia kliknięcia do przycisku zamykającego modal
+document.getElementsByClassName("close")[0].addEventListener("click", closeModal);
+
+// Dodanie zdarzenia kliknięcia do przycisku wysyłania formularza
+document.getElementById("form").addEventListener("submit", function(event) {
+ event.preventDefault();
+ closeModal();
+ // Przypisanie wprowadzonych odpowiedzi do odpowiednich elementów <p>
+ //document.getElementById("wynik1").innerHTML = document.getElementById("odp1").value;
+ document.getElementById("wynik2").innerHTML = document.getElementById("odp2").value;
+ document.getElementById("wynik3").innerHTML = document.getElementById("odp3").value;
+ document.getElementById("wynik4").innerHTML = document.getElementById("odp4").value;
+ document.getElementById("wynik5").innerHTML = document.getElementById("odp5").value;
+// Odczytaj wartość z pola formularza odp1
+const odp1Value = document.getElementById("odp1").value;
+
+// Zaktualizuj atrybut src obrazu
+document.getElementById("barcodeImage").src = `http://bwipjs-api.metafloor.com/?bcid=code128&text=${odp1Value}&includetext`;
+
+});
+
+</script>
+</body>
+</html>
