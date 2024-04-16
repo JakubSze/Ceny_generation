@@ -30,30 +30,28 @@
  </div>
 </div>
 <div class="wszystko">
-  <div class="row">
-<p id="wynik2"></p>
+  <div class="row wide">
+<p id="tytul"></p>
   </div>
   <div class="row">
     <div class="column">
 <img id="barcodeImage" alt="Barcoded value" src="http://bwipjs-api.metafloor.com/?bcid=code128&text=1234567890&includetext">
     </div>
     <div class="row">
-      <p id="wynik3"></p>
+      <p id="podt"></p>
     </div>
-    <div class="column" style="flex: 10;">
-      <p id="wynik4"></p>
+    <div class="column reg">
+      <p id="creg"></p>
       </div>
-      <div class="column" style="flex: 90;"></div>
-      <p id="wynik5"></p>
+      <div class="column cena">
+      <p id="cen"></p>
       </div>
+    </div>
+    <div class="row">
+      <p class="formu">Cena regularna to cena przekreślona</p>
     </div>
   </div>
-  <div class="row">
-    <p class="formu">Cena regularna to cena przekreślona</p>
-  </div>
-</div>
 
-</div>
 <script>
 // Funkcja do otwarcia modalnego okna dialogowego
 // Funkcja do otwarcia modalnego okna dialogowego
@@ -78,10 +76,10 @@ document.getElementById("form").addEventListener("submit", function(event) {
  closeModal();
  // Przypisanie wprowadzonych odpowiedzi do odpowiednich elementów <p>
  //document.getElementById("wynik1").innerHTML = document.getElementById("odp1").value;
- document.getElementById("wynik2").innerHTML = document.getElementById("odp2").value;
- document.getElementById("wynik3").innerHTML = document.getElementById("odp3").value;
- document.getElementById("wynik4").innerHTML = document.getElementById("odp4").value;
- document.getElementById("wynik5").innerHTML = document.getElementById("odp5").value;
+ document.getElementById("tytul").innerHTML = document.getElementById("odp2").value;
+ document.getElementById("podt").innerHTML = document.getElementById("odp3").value;
+ document.getElementById("creg").innerHTML = document.getElementById("odp4").value;
+ document.getElementById("cen").innerHTML = document.getElementById("odp5").value;
 // Odczytaj wartość z pola formularza odp1
 const odp1Value = document.getElementById("odp1").value;
 

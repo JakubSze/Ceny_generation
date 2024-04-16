@@ -29,13 +29,16 @@ img{
     display: flex;
     flex-direction: column;
     width: 100%;
-    text-align: center;
+border: solid;
 }
 
 .row {
     display: flex;
     flex-direction: row;
     width: 100%;
+    align-items: center;
+    justify-content: center;
+    border: solid;
 }
 
 .column {
@@ -43,8 +46,14 @@ img{
     flex-direction: column;
     flex-basis: 100%;
     flex: 1;
+    border: solid;
 }
-
-.formu{
-    text-align: center;
+.wide{
+    flex: 2;
+}
+.reg{
+    flex: 0 0 10%;
+}
+.cena{
+    flex: 0 0 90%;
 }
